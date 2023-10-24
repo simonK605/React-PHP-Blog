@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 // Styles
-// import './colors.module.scss';
+import "../../../assets/styles/index.scss";
+import 'bootstrap/dist/css/bootstrap.css';
 
 // Utils
 import request from "../../../utils/request";

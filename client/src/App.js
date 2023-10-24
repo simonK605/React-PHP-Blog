@@ -1,13 +1,9 @@
 import { useEffect, useState } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
 
-// Styles
-import './colors.module.scss';
-import './reset.module.scss';
-import 'bootstrap/dist/css/bootstrap.css';
-
 // Components
 import Main from "./components/common/main";
+import Wrapper from "./components/common/wrapper";
 import Header from "./components/common/header";
 import Home from "./components/pages/home";
 import CreatePost from "./components/pages/createPost";
@@ -52,14 +48,16 @@ function App() {
 
     return (
         <div className="App">
-            <Header />
-            <Main>
-                <Routes>
-                    <Route index path="/" element={<Home posts={posts} />} />
-                    <Route path="/posts/new" element={<CreatePost handlePostCreate={handlePostCreate} />} />
-                    <Route path="/posts/:id" element={<ShowPost posts={posts} setPosts={setPosts} />} />
-                </Routes>
-            </Main>
+            <Header/>
+                <Main>
+                    <Wrapper>
+                        <Routes>
+                            <Route index path="/" element={<Home posts={posts}/>}/>
+                            <Route path="/posts/new" element={<CreatePost handlePostCreate={handlePostCreate}/>}/>
+                            <Route path="/posts/:id" element={<ShowPost posts={posts} setPosts={setPosts}/>}/>
+                        </Routes>
+                    </Wrapper>
+                </Main>
         </div>
     );
 }
